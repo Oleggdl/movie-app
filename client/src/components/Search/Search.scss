@@ -1,0 +1,35 @@
+.searchContainer {
+  width: 300px;
+  margin-left: auto;
+  margin-right: 0;
+  padding: 14px 0;
+}
+
+.search {
+  width: 300px;
+}
+
+@media (max-width: 850px) {
+  .searchContainer {
+    width: 300px;
+    margin: 0 auto;
+    padding: 14px 0;
+  }
+}
+
+@media (max-width: 550px) {
+  .searchContainer {
+    margin-right: 20px;
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 400px) {
+  .searchContainer {
+    width: 250px;
+    margin-left: auto;
+  }
+  .search {
+    width: 250px;
+  }
+}

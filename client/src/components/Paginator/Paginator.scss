@@ -1,0 +1,85 @@
+.paginator {
+    margin: 60px auto;
+    display: flex;
+    justify-content: center;
+}
+.pageNumber {
+    cursor: pointer;
+    padding: 2px 5px;
+    border: 1px solid blue;
+}
+
+.pageNumber.selectedPage {
+    cursor: pointer;
+    font-weight: bold;
+    border-color: rgb(0, 17, 168);
+}
+
+.onePage {
+    min-width: 30px;
+    border: 1px solid #c9c9c9;
+    border-radius: 2px;
+    margin: 0 5px;
+    cursor: pointer;
+    padding: 2px;
+    transition: .2s linear;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    &:hover {
+        border: 1px solid #05a2e0;
+        color: #05a2e0;
+    }
+}
+
+.buttonPaginator {
+    border: 1px solid #c9c9c9;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: .2s linear;
+    background: unset;
+    margin: 0 10px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    &:hover {
+        border: 1px solid #05a2e0;
+        color: #05a2e0;
+    }
+}
+
+.disabled {
+    pointer-events:none;
+    opacity:0.8;
+}
+
+.currentPage {
+    color: #0076a2;
+}
+
+@media (max-width: 530px) {
+    .onePage {
+        min-width: 25px;
+        font-size: 12px;
+        margin: 0 1px;
+    }
+}
+
+@media (max-width: 385px) {
+    .onePage {
+        min-width: 20px;
+        height: 22px;
+        font-size: 10px;
+        margin: 0 1px;
+    }
+    .buttonPaginator {
+        font-size: 10px;
+        margin: 0 5px;
+    }
+}
