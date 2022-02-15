@@ -8,108 +8,6 @@
   display: flex;
 }
 
-.movieImg {
-  cursor: pointer;
-
-  .opacityImg {
-    display: none;
-    position: absolute;
-    width: 185px;
-    height: 278px;
-    transition: .3s linear;
-    background-color: #000000;
-    opacity: 0;
-    z-index: 2;
-    text-align: center;
-    padding-top: 220px;
-  }
-
-  &:hover {
-    .opacityImg {
-      display: block;
-      opacity: 0.9;
-    }
-  }
-}
-
-.opacityDescription {
-  display: block;
-  position: absolute;
-  width: 335px;
-  height: 278px;
-  background-color: black;
-  transition: .3s linear;
-  opacity: 0.95;
-  z-index: 2;
-  padding: 20px;
-  box-sizing: border-box;
-
-  p {
-    -webkit-line-clamp: 7;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-
-    color: #ffffff;
-    margin-top: 10px;
-  }
-}
-
-.descriptionContainer{
-  box-sizing: border-box;
-}
-
-h2 {
-  margin: 20px 0 0 20px;
-  text-transform: uppercase;
-}
-
-.genre {
-  padding-top: 25px;
-  box-sizing: border-box;
-  font-size: 20px;
-  margin-left: 20px;
-  color: #05a2e0;
-}
-
-.voteAverage {
-  width: 35px;
-  height: 26px;
-  color: #05a2e0;
-  text-align: center;
-  border: 2px solid #05a2e0;
-  border-radius: 10px;
-  margin: 20px 0 0 20px;
-}
-
-.posterImg {
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.defaultImg {
-  width: 185px;
-  height: 278px;
-  text-align: center;
-  padding: 100px 0;
-  font-size: 24px;
-  color: #ffffff;
-  font-weight: bold;
-  background-color: #c2c2c2;
-}
-
-.videoContainer {
-  position: absolute;
-  z-index: 4;
-}
-
-.videoIsNotExist {
-  background-color: red;
-}
-
 .videoIsNotExistMessage {
   position: fixed;
   left: 20px;
@@ -120,30 +18,9 @@ h2 {
   }
 }
 
-.frameVideo {
-  width: 520px;
-  height: 278px;
-}
-
 @media (max-width: 520px) {
   .movieContainer {
-    width: 400px;
-  }
-  h2 {
-    font-size: 18px;
-  }
-  .genre {
-    font-size: 16px;
-  }
-  .opacityDescription {
-    position: absolute;
-    left: 0;
-    width: 100%;
-  }
-  .movieContainer {
     position: relative;
-  }
-  .frameVideo {
     width: 400px;
   }
 }
@@ -152,35 +29,10 @@ h2 {
   .movieContainer {
     width: 350px;
   }
-  h2 {
-    font-size: 15px;
-  }
-  .genre {
-    font-size: 14px;
-    padding-top: 10px;
-    padding-right: 20px;
-    line-height: 1.2;
-  }
-  .frameVideo {
-    width: 350px;
-  }
 }
 
 @media (max-width: 350px) {
   .movieContainer {
-    width: 320px;
-  }
-  h2 {
-    font-size: 12px;
-    padding-right: 10px;
-  }
-  .genre {
-    font-size: 12px;
-    padding-top: 10px;
-    padding-right: 10px;
-    line-height: 1.2;
-  }
-  .frameVideo {
     width: 320px;
   }
 }

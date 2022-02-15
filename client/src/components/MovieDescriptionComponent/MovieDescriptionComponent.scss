@@ -1,0 +1,93 @@
+@import '~antd/dist/antd.css';
+
+.descriptionContainer {
+  box-sizing: border-box;
+}
+
+.opacityDescription {
+  display: block;
+  position: absolute;
+  width: 335px;
+  height: 278px;
+  background-color: black;
+  transition: .3s linear;
+  opacity: 0.95;
+  z-index: 2;
+  padding: 20px;
+  box-sizing: border-box;
+
+  p {
+    -webkit-line-clamp: 7;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+
+    color: #ffffff;
+    margin-top: 10px;
+  }
+}
+
+h2 {
+  margin: 20px 0 0 20px;
+  text-transform: uppercase;
+}
+
+.genre {
+  padding-top: 25px;
+  box-sizing: border-box;
+  font-size: 20px;
+  margin-left: 20px;
+  color: #05a2e0;
+}
+
+.voteAverage {
+  width: 35px;
+  height: 26px;
+  color: #05a2e0;
+  text-align: center;
+  border: 2px solid #05a2e0;
+  border-radius: 10px;
+  margin: 20px 0 0 20px;
+}
+
+@media (max-width: 520px) {
+
+  .opacityDescription {
+    position: absolute;
+    left: 0;
+    width: 100%;
+  }
+  .genre {
+    font-size: 16px;
+  }
+  h2 {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 400px) {
+
+  .genre {
+    font-size: 14px;
+    padding-top: 10px;
+    padding-right: 20px;
+    line-height: 1.2;
+  }
+  h2 {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 350px) {
+
+  .genre {
+    font-size: 12px;
+    padding-top: 10px;
+    padding-right: 10px;
+    line-height: 1.2;
+  }
+  h2 {
+    font-size: 12px;
+    padding-right: 10px;
+  }
+}

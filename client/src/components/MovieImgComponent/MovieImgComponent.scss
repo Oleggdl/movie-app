@@ -1,0 +1,44 @@
+@import '~antd/dist/antd.css';
+
+.movieImg {
+  cursor: pointer;
+
+  .opacityImg {
+    display: none;
+    position: absolute;
+    width: 185px;
+    height: 278px;
+    transition: .3s linear;
+    background-color: #000000;
+    opacity: 0;
+    z-index: 2;
+    text-align: center;
+    padding-top: 220px;
+  }
+
+  &:hover {
+    .opacityImg {
+      display: block;
+      opacity: 0.9;
+    }
+  }
+}
+
+.posterImg {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.defaultImg {
+  width: 185px;
+  height: 278px;
+  text-align: center;
+  padding: 100px 0;
+  font-size: 24px;
+  color: #ffffff;
+  font-weight: bold;
+  background-color: #c2c2c2;
+}
