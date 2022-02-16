@@ -25,6 +25,7 @@ class SearchResultsPageContainer extends React.Component {
                                onPageChangeMovies={this.onPageChangeMovies}
                                onPageChangeVideo={this.onPageChangeVideo}
                                search={this.props.search}
+                               currentPage={this.props.currentPage}
             />
         )
     }

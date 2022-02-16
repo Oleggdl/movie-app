@@ -6,7 +6,8 @@ import MovieImgComponent from "../MovieImgComponent/MovieImgComponent"
 import MovieDescriptionComponent from "../MovieDescriptionComponent/MovieDescriptionComponent"
 
 
-const MovieElement = ({movieId, genres, movies, onGetVideo, video}) => {
+const MovieElement = ({movieId, genres, movies, onGetVideo, video, countsWindowsDescriptions,
+                          setCountsWindowsDescriptions}) => {
 
     const movieID = movieId
     const genresArray = []
@@ -15,6 +16,7 @@ const MovieElement = ({movieId, genres, movies, onGetVideo, video}) => {
     const [isViewInfo, setIsViewInfo] = useState(false)
     const [videoPlay, setVideoPlay] = useState(false)
     const [videoKey, setVideoKey] = useState('')
+
 
     for (let genreID of genres.length !== 0 ? genres.genres : []) {
         for (let genre of movies.results[movieID].genre_ids) {
@@ -64,7 +66,9 @@ const MovieElement = ({movieId, genres, movies, onGetVideo, video}) => {
                             setVideoPlay={setVideoPlay}/>
 
             <MovieImgComponent baseUrl={baseUrl} imgPath={imgPath} isViewInfo={isViewInfo}
-                               setIsViewInfo={setIsViewInfo} setVideoKeyHandler={setVideoKeyHandler}/>
+                               setIsViewInfo={setIsViewInfo} setVideoKeyHandler={setVideoKeyHandler}
+                               setCountsWindowsDescriptions={setCountsWindowsDescriptions}
+                               countsWindowsDescriptions={countsWindowsDescriptions}/>
 
             <MovieDescriptionComponent isViewInfo={isViewInfo} voteAverage={voteAverage} title={title}
                                        buttonVideoHandler={buttonVideoHandler} genresArray={genresArray}

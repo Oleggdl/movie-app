@@ -38,10 +38,22 @@
   margin: 10px 20px;
 }
 
+.noResultsText {
+  margin: 0;
+  font-size: 50px;
+  text-align: center;
+  text-transform: uppercase;
+}
 
 @media (max-width: 1060px) {
   .moviesWrapper {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 1300px) {
+  .header {
+    padding: 0 100px;
   }
 }
 
@@ -65,13 +77,13 @@
   }
 }
 
-@media (max-width: 850px) {
+@media (max-width: 950px) {
   .header {
     display: block;
   }
 }
 
-@media (max-width: 550px) {
+@media (max-width: 660px) {
   .burgerMenu {
     display: block;
   }

@@ -1,24 +1,14 @@
-import React, {useState} from 'react'
+import React from 'react'
 import Search from "antd/es/input/Search";
 import './Search.scss'
 
-const SearchComponent = ({onSearch, onMovies, setSearch}) => {
-
-    const [localSearch, setLocalSearch] = useState('')
-
-    const setValue = value => {
-        setSearch(value)
-        setLocalSearch(value)
-        if (localSearch === '') {
-            onMovies()
-        }
-    }
+const SearchComponent = ({onSearch, setSearch, search}) => {
 
     return (
         <>
             <div className="searchContainer">
-                <Search placeholder="search" onSearch={onSearch} onChange={e => setValue(e.target.value)}
-                        value={localSearch} className="search"/>
+                <Search placeholder="search" onSearch={onSearch} onChange={e => setSearch(e.target.value)}
+                        value={search} className="search"/>
             </div>
         </>
     )

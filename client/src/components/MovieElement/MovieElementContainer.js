@@ -8,7 +8,6 @@ import {getGenres, getMovies, getVideo} from "../../redux/movieDb-reducer";
 class MovieElementContainer extends Component {
 
     componentDidMount() {
-        // this.props.getMovies()
         this.props.getGenres()
     }
 
@@ -24,6 +23,8 @@ class MovieElementContainer extends Component {
                           videoId={this.props.videoId}
                           video={this.props.video}
                           onGetVideo={this.onGetVideo}
+                          setCountsWindowsDescriptions={this.props.setCountsWindowsDescriptions}
+                          countsWindowsDescriptions={this.props.countsWindowsDescriptions}
             />
         )
     }

@@ -6,11 +6,12 @@ import NavigationContainer from "../../components/Navigation/NavigationContainer
 import SearchContainer from "../../components/Search/SearchContainer"
 import {MenuOutlined} from "@ant-design/icons";
 
-const SearchResultsPage = ({movies, onPageChangeVideo, onPageChangeMovies, search}) => {
+const SearchResultsPage = ({movies, onPageChangeVideo, onPageChangeMovies, search, currentPage}) => {
 
     const movieArray = movies.length !== 0 ? movies.results : []
 
     const [isBurgerMenu, setIsBurgerMenu] = useState(false)
+    const [countsWindowsDescriptions, setCountsWindowsDescriptions] = useState(0)
 
     const closeBurgerMenu = () => {
         !isBurgerMenu ? setIsBurgerMenu(true) : setIsBurgerMenu(false)
@@ -26,17 +27,22 @@ const SearchResultsPage = ({movies, onPageChangeVideo, onPageChangeMovies, searc
                 <SearchContainer/>
             </header>
 
-            <div className="moviesWrapper">
-                {movieArray.map((element, index) => (
-                    <div className="movieElement" key={index}>
-                        <MovieElementContainer movieId={index}/>
-                    </div>
-                ))}
-            </div>
+            {movieArray.length !== 0
+                ? <div className="moviesWrapper">
+                    {movieArray.map((element, index) => (
+                        <div className="movieElement" key={index}>
+                            <MovieElementContainer movieId={index}
+                                                   countsWindowsDescriptions={countsWindowsDescriptions}
+                                                   setCountsWindowsDescriptions={setCountsWindowsDescriptions}/>
+                        </div>
+                    ))}
+                </div>
+                : <h2 className="noResultsText">No results!</h2>}
 
             <div className="paginatorContainer">
-                <Pagination total={movies.total_results} pageSize={20}
-                            onPageChange={search === '' ? onPageChangeMovies : onPageChangeVideo}/>
+                <Pagination total={movies.total_results} pageSize={20} currentPage={currentPage}
+                            onPageChange={search === '' ? onPageChangeMovies : onPageChangeVideo}
+                />
             </div>
         </div>
     )

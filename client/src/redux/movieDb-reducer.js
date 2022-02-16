@@ -103,7 +103,7 @@ export const setCategoryActionCreator = (category) => ({type: SET_CATEGORY, cate
 export const setVideoActionCreator = (video) => ({type: GET_VIDEO, video})
 export const setMovieIdActionCreator = (videoId) => ({type: SET_MOVIE_ID, videoId})
 export const setQueryActionCreator = (query) => ({type: SET_QUERY, query})
-export const setGenreActionCreator = (genre) => ({type: SET_QUERY, genre})
+export const setGenreActionCreator = (genre) => ({type: SET_GENRE, genre})
 export const setSearchActionCreator = (search) => ({type: SET_SEARCH, search})
 
 

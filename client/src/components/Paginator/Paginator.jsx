@@ -29,7 +29,9 @@ const Paginator = memo(({total, pageSize, onPageChange, portionSize = 10, curren
 
         {pages
             .filter(p => p >= leftPortionPageNumber && p <= rightPortionPageNumber)
-            .map((p) => <div className="onePage" key={p} onClick={e => onPageChange(p)}>{p}</div>)}
+            .map((p) =>currentPage === p
+                ? <div className="onePage currentPage" key={p} onClick={e => onPageChange(p)}>{p}</div>
+                : <div className="onePage" key={p} onClick={e => onPageChange(p)}>{p}</div>)}
 
         {portionCount > portionNumber
             ? <button className="buttonPaginator" onClick={rightButtonHandler}>NEXT</button>

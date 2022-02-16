@@ -28,16 +28,21 @@
 }
 
 h2 {
-  margin: 20px 0 0 20px;
+  margin: 20px 5px 0 20px;
   text-transform: uppercase;
 }
 
 .genre {
-  padding-top: 25px;
+  padding-top: 20px;
   box-sizing: border-box;
   font-size: 20px;
   margin-left: 20px;
+  margin-right: 10px;
   color: #05a2e0;
+  -webkit-line-clamp: 3;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .voteAverage {
@@ -47,7 +52,7 @@ h2 {
   text-align: center;
   border: 2px solid #05a2e0;
   border-radius: 10px;
-  margin: 20px 0 0 20px;
+  margin: 10px 0 0 20px;
 }
 
 @media (max-width: 520px) {

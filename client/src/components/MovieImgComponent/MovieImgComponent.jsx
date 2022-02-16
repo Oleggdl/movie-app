@@ -2,10 +2,22 @@ import React from 'react'
 import {Button} from "antd"
 import './MovieImgComponent.scss'
 
-const MovieImgComponent = ({isViewInfo, setVideoKeyHandler, setIsViewInfo, baseUrl, imgPath}) => {
+const MovieImgComponent = ({isViewInfo, setVideoKeyHandler, setIsViewInfo, baseUrl, countsWindowsDescriptions,
+                               imgPath, setCountsWindowsDescriptions}) => {
+
+
+
 
     const onViewInfo = () => {
-        setIsViewInfo(true)
+        if (countsWindowsDescriptions > 0) {
+            setIsViewInfo(false)
+            setCountsWindowsDescriptions(0)
+        } else {
+            setIsViewInfo(true)
+        }
+
+        setVideoKeyHandler()
+        setCountsWindowsDescriptions(countsWindowsDescriptions + 1)
     }
 
     return (
@@ -13,8 +25,8 @@ const MovieImgComponent = ({isViewInfo, setVideoKeyHandler, setIsViewInfo, baseU
             <div className="movieImg">
                 {!isViewInfo && <div className="opacityImg">
                     <Button onClick={() => {
-                        setVideoKeyHandler()
                         onViewInfo()
+                        // setIsViewInfo(true)
                     }}>View Info</Button>
                 </div>}
                 {baseUrl.poster_path

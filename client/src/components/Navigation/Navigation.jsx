@@ -7,7 +7,7 @@ import {CloseOutlined} from "@ant-design/icons";
 const Navigation = ({onSetGenre, onSetCategory, isBurgerMenu, closeBurgerMenu}) => {
 
     const options = genresList
-
+    
     return (
         <>
             <nav className="categoryNav">
@@ -20,8 +20,8 @@ const Navigation = ({onSetGenre, onSetCategory, isBurgerMenu, closeBurgerMenu}) 
                 <button className="btnNav" onClick={e => onSetCategory(e.target.value)}
                         value={'upcoming'}>Coming Soon
                 </button>
-                <Select className="select" mode="multiple" placeholder="Select genre" options={options} showArrow
-                        style={{minWidth: '200px', maxWidth: '700px'}}
+                <Select className="select" mode="multiple" maxTagCount={1} placeholder="Select genre"
+                        options={options} showArrow style={{minWidth: '200px', maxWidth: '700px'}}
                         onChange={e => onSetGenre(e.join(', '))}>Genre</Select>
             </nav>
             {isBurgerMenu && <nav className="burgerNav">
@@ -43,8 +43,7 @@ const Navigation = ({onSetGenre, onSetCategory, isBurgerMenu, closeBurgerMenu}) 
                         </button>
                     </li>
                     <li><Select className="select" mode="multiple" placeholder="Select genre" options={options}
-                                showArrow
-                                style={{minWidth: '200px', maxWidth: '700px'}}
+                                showArrow maxTagCount={1} style={{minWidth: '200px', maxWidth: '700px'}}
                                 onChange={e => onSetGenre(e.join(', '))}>Genre</Select></li>
                 </ul>
             </nav>}

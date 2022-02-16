@@ -6,11 +6,7 @@ import SearchComponent from "./Search"
 
 class SearchContainer extends Component {
 
-    onMovies = () => {
-        this.props.getMovies(this.props.currentPage, this.props.category, this.props.genre)
-    }
-
-    setSearch = (value) => {
+    setSearch = value => {
         this.props.setSearch(value)
     }
 
@@ -26,7 +22,6 @@ class SearchContainer extends Component {
         return (
             <>
                 <SearchComponent onSearch={this.onSearch}
-                                 onMovies={this.onMovies}
                                  setSearch={this.setSearch}
                                  search={this.props.search}/>
             </>
