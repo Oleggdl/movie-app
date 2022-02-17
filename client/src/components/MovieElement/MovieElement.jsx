@@ -7,7 +7,8 @@ import MovieDescriptionComponent from "../MovieDescriptionComponent/MovieDescrip
 
 
 const MovieElement = ({movieId, genres, movies, onGetVideo, video, countsWindowsDescriptions,
-                          setCountsWindowsDescriptions}) => {
+                          setCountsWindowsDescriptions, isDescriptionForPagination,
+                          setIsDescriptionForPagination}) => {
 
     const movieID = movieId
     const genresArray = []
@@ -68,7 +69,9 @@ const MovieElement = ({movieId, genres, movies, onGetVideo, video, countsWindows
             <MovieImgComponent baseUrl={baseUrl} imgPath={imgPath} isViewInfo={isViewInfo}
                                setIsViewInfo={setIsViewInfo} setVideoKeyHandler={setVideoKeyHandler}
                                setCountsWindowsDescriptions={setCountsWindowsDescriptions}
-                               countsWindowsDescriptions={countsWindowsDescriptions}/>
+                               countsWindowsDescriptions={countsWindowsDescriptions} setVideoPlay={setVideoPlay}
+                               setIsDescriptionForPagination={setIsDescriptionForPagination}
+                               isDescriptionForPagination={isDescriptionForPagination}/>
 
             <MovieDescriptionComponent isViewInfo={isViewInfo} voteAverage={voteAverage} title={title}
                                        buttonVideoHandler={buttonVideoHandler} genresArray={genresArray}

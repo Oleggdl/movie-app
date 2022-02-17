@@ -25,6 +25,8 @@ class MovieElementContainer extends Component {
                           onGetVideo={this.onGetVideo}
                           setCountsWindowsDescriptions={this.props.setCountsWindowsDescriptions}
                           countsWindowsDescriptions={this.props.countsWindowsDescriptions}
+                          setIsDescriptionForPagination={this.props.setIsDescriptionForPagination}
+                          isDescriptionForPagination={this.props.isDescriptionForPagination}
             />
         )
     }

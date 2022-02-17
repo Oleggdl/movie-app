@@ -1,7 +1,9 @@
 import React, {memo, useState} from "react"
 import './Paginator.scss'
 
-const Paginator = memo(({total, pageSize, onPageChange, portionSize = 10, currentPage}) => {
+const Paginator = memo(({total, pageSize, onPageChange, portionSize = 10, currentPage,
+                            setIsDescriptionForPagination}) => {
+
     let pagesCount = Math.ceil(total / pageSize)
     let pages = []
     for (let i = 1; i <= pagesCount; i++) {
@@ -30,8 +32,14 @@ const Paginator = memo(({total, pageSize, onPageChange, portionSize = 10, curren
         {pages
             .filter(p => p >= leftPortionPageNumber && p <= rightPortionPageNumber)
             .map((p) =>currentPage === p
-                ? <div className="onePage currentPage" key={p} onClick={e => onPageChange(p)}>{p}</div>
-                : <div className="onePage" key={p} onClick={e => onPageChange(p)}>{p}</div>)}
+                ? <div className="onePage currentPage" key={p} onClick={e => {
+                    onPageChange(p)
+                    setIsDescriptionForPagination(true)
+                }}>{p}</div>
+                : <div className="onePage" key={p} onClick={e => {
+                    onPageChange(p)
+                    setIsDescriptionForPagination(true)
+                }}>{p}</div>)}
 
         {portionCount > portionNumber
             ? <button className="buttonPaginator" onClick={rightButtonHandler}>NEXT</button>

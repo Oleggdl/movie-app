@@ -12,6 +12,7 @@ const SearchResultsPage = ({movies, onPageChangeVideo, onPageChangeMovies, searc
 
     const [isBurgerMenu, setIsBurgerMenu] = useState(false)
     const [countsWindowsDescriptions, setCountsWindowsDescriptions] = useState(0)
+    const [isDescriptionForPagination, setIsDescriptionForPagination] = useState(false)
 
     const closeBurgerMenu = () => {
         !isBurgerMenu ? setIsBurgerMenu(true) : setIsBurgerMenu(false)
@@ -33,7 +34,9 @@ const SearchResultsPage = ({movies, onPageChangeVideo, onPageChangeMovies, searc
                         <div className="movieElement" key={index}>
                             <MovieElementContainer movieId={index}
                                                    countsWindowsDescriptions={countsWindowsDescriptions}
-                                                   setCountsWindowsDescriptions={setCountsWindowsDescriptions}/>
+                                                   setCountsWindowsDescriptions={setCountsWindowsDescriptions}
+                                                   isDescriptionForPagination={isDescriptionForPagination}
+                                                   setIsDescriptionForPagination={setIsDescriptionForPagination}/>
                         </div>
                     ))}
                 </div>
@@ -42,6 +45,7 @@ const SearchResultsPage = ({movies, onPageChangeVideo, onPageChangeMovies, searc
             <div className="paginatorContainer">
                 <Pagination total={movies.total_results} pageSize={20} currentPage={currentPage}
                             onPageChange={search === '' ? onPageChangeMovies : onPageChangeVideo}
+                            setIsDescriptionForPagination={setIsDescriptionForPagination}
                 />
             </div>
         </div>
